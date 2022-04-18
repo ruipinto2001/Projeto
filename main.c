@@ -28,10 +28,12 @@ int main(int argc, char const *argv[]) {
 					break;
             case 6: determineLongestTime(jobList->op);
 					break;
-            case 7: printf("Fim do programa!!");
+            case 7: printf("Fim do programa!!\n\n");
             		break;
         }
-    }while(opcao != 0);
+    }while(opcao != 7);
+
+    guardarDadosNoFicheiro(jobList->op);
 
     return 0;
 }

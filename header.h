@@ -32,6 +32,7 @@ typedef struct job {
 job *inicializarJob();
 operation *inicializarOperation();
 void verificarDadosNoFicheiro(operation *op, int *idCont);
+void guardarDadosNoFicheiro(operation *op);
 void menu(int *opcao);
 void insertNewOperation(operation *op, int *idCont);
 void listOperation(operation *op);

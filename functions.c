@@ -43,7 +43,7 @@ operation *inicializarOperation() {
 //Abertura do ficheiro test.txt e verificacao dos dados
 void verificarDadosNoFicheiro(operation *op, int *idCont) {
 	operation *opP, *auxOp;
-	FILE *f_JOB = fopen("test.txt","r");
+	FILE *f_JOB = fopen("dados.txt","r");
 	char symb ;
     unsigned char symbI;
 	int i = 0, cont = 0, valido = 0, arrayM[100], arrayT[100];
@@ -93,6 +93,42 @@ void verificarDadosNoFicheiro(operation *op, int *idCont) {
 			}
 		}while(valido == 0);
 	}
+
+    fclose(f_JOB);
+}
+
+//Guardar dados no ficheiro dados.txt
+void guardarDadosNoFicheiro(operation *op) {
+    FILE *f_JOB = fopen("dados.txt","w");
+    int j;
+
+    if(f_JOB != NULL) {
+        if((*op).next==NULL) {
+            puts("Nenhum dado para colocar na lista de (Meios de Mobilidade)");
+        }
+        else {
+            while((*op).next != NULL) {
+                for (j = 0; j < (*op).quantMachines; ++j) {
+                    if( j == 0)
+                        fprintf(f_JOB,"(%d,",(*op).machineAndTime[0*(*op).quantMachines + j]);
+                    else if(((*op).quantMachines - j) != 1)
+                        fprintf(f_JOB,"%d,",(*op).machineAndTime[0*(*op).quantMachines + j]);
+                    else
+                        fprintf(f_JOB,"%d)\n",(*op).machineAndTime[0*(*op).quantMachines + j]);
+                }
+                for (j = 0; j < (*op).quantMachines; ++j) {
+                    if( j == 0)
+                        fprintf(f_JOB,"[%d,",(*op).machineAndTime[1*(*op).quantMachines + j]);
+                    else if(((*op).quantMachines - j) != 1)
+                        fprintf(f_JOB,"%d,",(*op).machineAndTime[1*(*op).quantMachines + j]);
+                    else
+                        fprintf(f_JOB,"%d]\n",(*op).machineAndTime[1*(*op).quantMachines + j]);
+                }
+                op=(*op).next;
+            }
+        }
+        printf("Lista de Jobs e Operacoes foi carregada no ficheiro (dados.txt) com sucesso!!\n");
+    }
 
     fclose(f_JOB);
 }
