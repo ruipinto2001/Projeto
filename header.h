@@ -14,6 +14,7 @@
 #endif
 
 #pragma region Structs
+
 typedef struct operation {
     int id;
     int quantMachines;
@@ -24,6 +25,7 @@ typedef struct operation {
 typedef struct job {
     operation *op;
 }job;
+
 #pragma endregion
 
 #pragma region Signatures
@@ -37,7 +39,6 @@ void removeOperation(job **jobList);
 void editOperation(operation *op);
 void determineShortestTime(operation *op);
 void determineLongestTime(operation *op);
-void determineAverageTime(job *jobList);
 #pragma endregion
 
 #endif
