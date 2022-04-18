@@ -16,17 +16,17 @@ int main(int argc, char const *argv[]) {
         menu(&opcao);
 
         switch(opcao) {
-            case 1: insertNewOperation(jobList->op,&idCont); 
+            case 1: inserirNovaOperacao(jobList->op,&idCont); 
 					break;
-            case 2: listOperation(jobList->op); 
+            case 2: listarOperacoes(jobList->op); 
 					break;
-            case 3: removeOperation(&jobList);
+            case 3: removerOperacao(&jobList);
 					break;
-            case 4: editOperation(jobList->op);
+            case 4: editarOperacao(jobList->op);
 					break;
-            case 5: determineShortestTime(jobList->op);
+            case 5: determinarTempoMinimo(jobList->op);
 					break;
-            case 6: determineLongestTime(jobList->op);
+            case 6: determinarTempoMaximo(jobList->op);
 					break;
             case 7: printf("Fim do programa!!\n\n");
             		break;

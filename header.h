@@ -29,17 +29,19 @@ typedef struct job {
 #pragma endregion
 
 #pragma region Signatures
+
 job *inicializarJob();
 operation *inicializarOperation();
 void verificarDadosNoFicheiro(operation *op, int *idCont);
 void guardarDadosNoFicheiro(operation *op);
 void menu(int *opcao);
-void insertNewOperation(operation *op, int *idCont);
-void listOperation(operation *op);
-void removeOperation(job **jobList);
-void editOperation(operation *op);
-void determineShortestTime(operation *op);
-void determineLongestTime(operation *op);
+void inserirNovaOperacao(operation *op, int *idCont);
+void listarOperacoes(operation *op);
+void removerOperacao(job **jobList);
+void editarOperacao(operation *op);
+void determinarTempoMinimo(operation *op);
+void determinarTempoMaximo(operation *op);
+
 #pragma endregion
 
 #endif

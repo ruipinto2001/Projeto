@@ -134,7 +134,7 @@ void guardarDadosNoFicheiro(operation *op) {
 }
 
 //Funcao para inserir uma nova operacao
-void insertNewOperation(operation *op, int *idCont) {
+void inserirNovaOperacao(operation *op, int *idCont) {
     char *input;
     int i, j;
 	operation *auxOp;
@@ -179,7 +179,7 @@ void insertNewOperation(operation *op, int *idCont) {
 }
 
 //Funcao para listar todas as operacoes existentes
-void listOperation(operation *op) {
+void listarOperacoes(operation *op) {
 	int i = 0, j = 0;	
 
 	system("cls");
@@ -213,7 +213,7 @@ void listOperation(operation *op) {
 }
 
 //Funcao para remover determinada operacao
-void removeOperation(job **jobList) {
+void removerOperacao(job **jobList) {
 	operation *y, *atras, *frente, *auxOp;
 	int j, intremover;
 	char charemover[40];
@@ -294,7 +294,7 @@ void removeOperation(job **jobList) {
 }
 
 //Funcao para editar determinada operacao
-void editOperation(operation *operationList) {
+void editarOperacao(operation *operationList) {
 	operation *auxOp;
 	int i, j, intedit;
 	char charedit[40], *input;
@@ -407,7 +407,7 @@ void editOperation(operation *operationList) {
 }
 
 //Determinar o tempo minimo necessario para completar o job e listagem das respetivas operações
-void determineShortestTime(operation *op) {
+void determinarTempoMinimo(operation *op) {
 	int i = 0, j = 0, soma = 0, min, mach;
 
 	system("cls");
@@ -438,7 +438,7 @@ void determineShortestTime(operation *op) {
 }
 
 //Determinar o tempo maximo necessario para completar o job e listagem das respetivas operações
-void determineLongestTime(operation *op) {
+void determinarTempoMaximo(operation *op) {
 	int i = 0, j = 0, soma = 0, max, mach;
 
 	system("cls");
