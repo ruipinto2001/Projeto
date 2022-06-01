@@ -1,0 +1,94 @@
+\hypertarget{header_8h_source}{}\doxysection{header.\+h}
+\mbox{\hyperlink{header_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef DATA}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define DATA}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <conio.h>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <errno.h>}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#ifdef \_WIN32}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <Windows.h>}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <unistd.h>}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#pragma region Structs }}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{31 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structoperacao}{operacao}} \{}
+\DoxyCodeLine{32     \textcolor{keywordtype}{int} \mbox{\hyperlink{structoperacao_aab9d1384793e9f096b67d498bf47deef}{id}};                 \textcolor{comment}{// Codigo da operacao}}
+\DoxyCodeLine{33     \textcolor{keywordtype}{int} \mbox{\hyperlink{structoperacao_ac7bcaf7548e3aa2025d72589cdaa51f9}{quantMaquinas}};      \textcolor{comment}{// Quantidade de maquinas na operacao}}
+\DoxyCodeLine{34     \textcolor{keywordtype}{int} *\mbox{\hyperlink{structoperacao_ab6c0106d06653333e8b05ce3e562cdbb}{maquinaTempo}};      \textcolor{comment}{// Maquina e o seu respetivo tempo}}
+\DoxyCodeLine{35     \textcolor{keyword}{struct }\mbox{\hyperlink{structoperacao}{operacao}} *\mbox{\hyperlink{structoperacao_a1771cdcf92a9a73b3d8b9becd22c9fcc}{seg}};   \textcolor{comment}{// Operacao seguinte}}
+\DoxyCodeLine{36 \}\mbox{\hyperlink{header_8h_ac503402b5e2a14c40dcb7b7ce151df12}{operacao}};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{41 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structjob}{job}} \{}
+\DoxyCodeLine{42     \textcolor{keywordtype}{int} \mbox{\hyperlink{structjob_a14f2a8b63b37554fd774fefa8e75608e}{id}};             \textcolor{comment}{// Codigo do Job}}
+\DoxyCodeLine{43     \textcolor{keywordtype}{int} \mbox{\hyperlink{structjob_abfff0056e6e356d68c14573a98ef13ff}{numOperacoes}};   \textcolor{comment}{// Numero de operacoes}}
+\DoxyCodeLine{44     \mbox{\hyperlink{structoperacao}{operacao}} *\mbox{\hyperlink{structjob_a4bf4637143979dd6f3e9accf1d189d50}{op}};       \textcolor{comment}{// Apontador da operacao}}
+\DoxyCodeLine{45     \textcolor{keyword}{struct }\mbox{\hyperlink{structjob}{job}} *\mbox{\hyperlink{structjob_adb92d2f54ac8bfa048001a2fe3e52c61}{seg}};    \textcolor{comment}{// Job seguinte}}
+\DoxyCodeLine{46 \}\mbox{\hyperlink{header_8h_a7e76c3b43901a65c2e31e18292700f77}{job}};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#pragma region Assinaturas Operacao}}
+\DoxyCodeLine{51     }
+\DoxyCodeLine{52     \mbox{\hyperlink{structoperacao}{operacao}} *\mbox{\hyperlink{header_8h_abf0a042d999c3237dc771ba6cbfae496}{inicializarOperacao}}();}
+\DoxyCodeLine{53     \mbox{\hyperlink{structoperacao}{operacao}} *\mbox{\hyperlink{header_8h_a63d82564c651148c8eeeed6162b25d21}{novoNoOperacao}}();}
+\DoxyCodeLine{54     \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a384b81143be131f0a9dd4a9839b072ba}{inserirNovaOperacao}}(\mbox{\hyperlink{structoperacao}{operacao}} *\mbox{\hyperlink{structjob_a4bf4637143979dd6f3e9accf1d189d50}{op}}, \textcolor{keywordtype}{int} *idCont);}
+\DoxyCodeLine{55     \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a6d3abf8b64f5a7df82f9af96d40b9114}{listaOperacao}}(\mbox{\hyperlink{structoperacao}{operacao}} *\mbox{\hyperlink{structjob_a4bf4637143979dd6f3e9accf1d189d50}{op}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{structjob_abfff0056e6e356d68c14573a98ef13ff}{numOperacoes}});}
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a6485fdb56c0cf76c3ae5f67e477ffb97}{editaOperacao}}(\mbox{\hyperlink{structoperacao}{operacao}} *\mbox{\hyperlink{structjob_a4bf4637143979dd6f3e9accf1d189d50}{op}});}
+\DoxyCodeLine{57     \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_aa4ecb3ec8d1aca0d146ce7904218939d}{determinaTempoCurto}}(\mbox{\hyperlink{structoperacao}{operacao}} *\mbox{\hyperlink{structjob_a4bf4637143979dd6f3e9accf1d189d50}{op}});}
+\DoxyCodeLine{58     \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_adb04b028690f19aaa9cf17d9cbb92dbb}{determinaTempoLongo}}(\mbox{\hyperlink{structoperacao}{operacao}} *\mbox{\hyperlink{structjob_a4bf4637143979dd6f3e9accf1d189d50}{op}});}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_ab8b0d0e933cc56ece0a8346c5600c5d2}{listarNoOperacao}}(\mbox{\hyperlink{structoperacao}{operacao}} *\mbox{\hyperlink{structjob_a4bf4637143979dd6f3e9accf1d189d50}{op}});}
+\DoxyCodeLine{61     \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_ad1e3d070dab821a8a512d27b59edd869}{leOperacao}}(\mbox{\hyperlink{structoperacao}{operacao}} *\mbox{\hyperlink{structjob_a4bf4637143979dd6f3e9accf1d189d50}{op}});}
+\DoxyCodeLine{62     \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a2bf7f0ff2388ffd68d7f924de1452c4b}{removeOperacao}}(\mbox{\hyperlink{structoperacao}{operacao}} *\mbox{\hyperlink{structjob_a4bf4637143979dd6f3e9accf1d189d50}{op}}, \textcolor{keywordtype}{int} *\mbox{\hyperlink{structjob_abfff0056e6e356d68c14573a98ef13ff}{numOperacoes}});}
+\DoxyCodeLine{63     \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a7bcf635ec89d4b6915d4e06ba0202c75}{insereNoOperacao}}(\mbox{\hyperlink{structoperacao}{operacao}} *\mbox{\hyperlink{structjob_a4bf4637143979dd6f3e9accf1d189d50}{op}}, \textcolor{keywordtype}{int} *\mbox{\hyperlink{structjob_abfff0056e6e356d68c14573a98ef13ff}{numOperacoes}});}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#pragma region Assinaturas Job}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69     \mbox{\hyperlink{structjob}{job}} *\mbox{\hyperlink{header_8h_a5386ca906b1a5e19926c0546bd4c3b37}{inicializarJob}}();}
+\DoxyCodeLine{70     \mbox{\hyperlink{structjob}{job}} *\mbox{\hyperlink{header_8h_a01462b8359039a888d2a5449fadcc0be}{novoNoJob}}(\textcolor{keywordtype}{int} key);}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a6339740f2e7a605c270b6c2fadd2a833}{criaOperacaoApartirFich}}(\mbox{\hyperlink{structoperacao}{operacao}} *\mbox{\hyperlink{structjob_a4bf4637143979dd6f3e9accf1d189d50}{op}}, \textcolor{keywordtype}{int} idOp, \textcolor{keywordtype}{int} cont, \textcolor{keywordtype}{int} arrM[], \textcolor{keywordtype}{int} arrT[]);}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74     \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_aaa24471450cbfb2928be5590944c37d8}{inserirJob}}(\mbox{\hyperlink{structjob}{job}} *jb, \textcolor{keywordtype}{int} *idContJob);}
+\DoxyCodeLine{75     \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a0236d64b392cf0118637909de2f6e687}{removeJob}}(\mbox{\hyperlink{structjob}{job}} *jb); }
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77     \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a17d7898933db51843ef6418d7f3d1236}{listarNoJob}}(\mbox{\hyperlink{structoperacao}{operacao}} *auxOp, \mbox{\hyperlink{structjob}{job}} *jb);}
+\DoxyCodeLine{78     \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a2c54d3f6d2009ac120971b93bbeb487b}{listarJobEmListaOrdenada}}(\mbox{\hyperlink{structjob}{job}} *j);}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80     \mbox{\hyperlink{structjob}{job}} *\mbox{\hyperlink{header_8h_a8380af973c35d1fcdfcd4aab0130d2d5}{descobreJobLista}}(\mbox{\hyperlink{structjob}{job}} *root, \textcolor{keywordtype}{int} key) ;}
+\DoxyCodeLine{81     \mbox{\hyperlink{structjob}{job}} *\mbox{\hyperlink{header_8h_a983d59477539e8a33752832ba7b638c4}{descobreJob}}(\mbox{\hyperlink{structjob}{job}} *auxjb);}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#pragma region Assinaturas Ficheiro}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88     \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_ae2b0de0f3d821d2f3ac02f5bc33d6a93}{verificarDadosNoFicheiro}}(\mbox{\hyperlink{structoperacao}{operacao}} *\mbox{\hyperlink{structjob_a4bf4637143979dd6f3e9accf1d189d50}{op}}, \textcolor{keywordtype}{int} *idCont, \textcolor{keywordtype}{int} *\mbox{\hyperlink{structjob_abfff0056e6e356d68c14573a98ef13ff}{numOperacoes}});}
+\DoxyCodeLine{89     \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a6339740f2e7a605c270b6c2fadd2a833}{criaOperacaoApartirFich}}(\mbox{\hyperlink{structoperacao}{operacao}} *\mbox{\hyperlink{structjob_a4bf4637143979dd6f3e9accf1d189d50}{op}}, \textcolor{keywordtype}{int} idOp, \textcolor{keywordtype}{int} cont, \textcolor{keywordtype}{int} arrM[], \textcolor{keywordtype}{int} arrT[]);}
+\DoxyCodeLine{90     \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a0fca82f47c2cd1ed4fb96737f8b5e550}{escreveNoFich}}(\mbox{\hyperlink{structoperacao}{operacao}} *\mbox{\hyperlink{structjob_a4bf4637143979dd6f3e9accf1d189d50}{op}}, \textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, FILE *f\_JOB);}
+\DoxyCodeLine{91     \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_ac78a7c0dfe5623fa4db1489462974e52}{guardaDadosFile}}(\mbox{\hyperlink{structjob}{job}} *jb, \textcolor{keywordtype}{char} *nomeFich);}
+\DoxyCodeLine{92     \mbox{\hyperlink{structjob}{job}} *\mbox{\hyperlink{header_8h_ac857042df69ef0cd82f77d33a5630e88}{verificaDadosNoFich}}(\mbox{\hyperlink{structjob}{job}} *jb, \textcolor{keywordtype}{int} *idContJob);}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#pragma region Outras Assinaturas}}
+\DoxyCodeLine{97     }
+\DoxyCodeLine{98     \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a4a52bb97d189a85f26ec72c6eeb38bb9}{menu}}(\textcolor{keywordtype}{int} *opcao);}
+\DoxyCodeLine{99     \textcolor{keywordtype}{int} \mbox{\hyperlink{header_8h_a7d00f6e213c7f5c43b364fcee9208c16}{procuraMaquinaIgual}}(\mbox{\hyperlink{structoperacao}{operacao}} *maq, \textcolor{keywordtype}{int} procElem, \textcolor{keywordtype}{int} posAtual);}
+\DoxyCodeLine{100     \textcolor{keywordtype}{int} \mbox{\hyperlink{header_8h_a521292834df51f6379eb764b6fb56446}{simNao}}();}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#pragma endregion Outras Assinaturas}}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

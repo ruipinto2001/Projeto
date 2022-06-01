@@ -1,0 +1,107 @@
+\hypertarget{main_8c}{}\doxysection{main.\+c File Reference}
+\label{main_8c}\index{main.c@{main.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$conio.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}header.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}functions.\+c\char`\"{}}\newline
+Include dependency graph for main.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19            \{}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     \mbox{\hyperlink{structjob}{job}} *jb = NULL, *procuraJob = NULL;}
+\DoxyCodeLine{22     \textcolor{keywordtype}{int} opcao, idContJob = 1, idCont = 0;}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24     system(\textcolor{stringliteral}{"{}cls"{}});}
+\DoxyCodeLine{25     jb = \mbox{\hyperlink{functions_8c_a01462b8359039a888d2a5449fadcc0be}{novoNoJob}}(idContJob);}
+\DoxyCodeLine{26     \mbox{\hyperlink{functions_8c_ac857042df69ef0cd82f77d33a5630e88}{verificaDadosNoFich}}(jb,\&idContJob);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \mbox{\hyperlink{structjob}{job}} *listaJob;   }
+\DoxyCodeLine{30     \mbox{\hyperlink{structoperacao}{operacao}} *\mbox{\hyperlink{header_8h_a6d3abf8b64f5a7df82f9af96d40b9114}{listaOperacao}};   }
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     listaJob = \mbox{\hyperlink{functions_8c_a5386ca906b1a5e19926c0546bd4c3b37}{inicializarJob}}();}
+\DoxyCodeLine{33     \mbox{\hyperlink{functions_8c_ae2b0de0f3d821d2f3ac02f5bc33d6a93}{verificarDadosNoFicheiro}}(listaJob-\/>\mbox{\hyperlink{structjob_a4bf4637143979dd6f3e9accf1d189d50}{op}},\&idCont,\&(listaJob-\/>\mbox{\hyperlink{structjob_abfff0056e6e356d68c14573a98ef13ff}{numOperacoes}}));}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{37         \mbox{\hyperlink{functions_8c_a4a52bb97d189a85f26ec72c6eeb38bb9}{menu}}(\&opcao);}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39         \textcolor{keywordflow}{switch}(opcao) \{}
+\DoxyCodeLine{40             \textcolor{keywordflow}{case} 1: \mbox{\hyperlink{functions_8c_a384b81143be131f0a9dd4a9839b072ba}{inserirNovaOperacao}}(listaJob-\/>\mbox{\hyperlink{structjob_a4bf4637143979dd6f3e9accf1d189d50}{op}}, \&idCont); }
+\DoxyCodeLine{41                     system(\textcolor{stringliteral}{"{}pause"{}});}
+\DoxyCodeLine{42                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{43             \textcolor{keywordflow}{case} 2: \mbox{\hyperlink{functions_8c_ab381ed94e49873d0f903c53e08ad4067}{listarOperacao}}(listaJob-\/>\mbox{\hyperlink{structjob_a4bf4637143979dd6f3e9accf1d189d50}{op}}, listaJob-\/>\mbox{\hyperlink{structjob_abfff0056e6e356d68c14573a98ef13ff}{numOperacoes}}); }
+\DoxyCodeLine{44                     system(\textcolor{stringliteral}{"{}pause"{}});}
+\DoxyCodeLine{45                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{46             \textcolor{keywordflow}{case} 3: procuraJob = \mbox{\hyperlink{functions_8c_a983d59477539e8a33752832ba7b638c4}{descobreJob}}(jb);}
+\DoxyCodeLine{47                     \mbox{\hyperlink{functions_8c_a2bf7f0ff2388ffd68d7f924de1452c4b}{removeOperacao}}(procuraJob-\/>op,\&(procuraJob-\/>numOperacoes));}
+\DoxyCodeLine{48                     system(\textcolor{stringliteral}{"{}pause"{}});}
+\DoxyCodeLine{49                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{50             \textcolor{keywordflow}{case} 4: procuraJob = \mbox{\hyperlink{functions_8c_a983d59477539e8a33752832ba7b638c4}{descobreJob}}(jb);}
+\DoxyCodeLine{51                     \mbox{\hyperlink{functions_8c_a6485fdb56c0cf76c3ae5f67e477ffb97}{editaOperacao}}(procuraJob-\/>op);}
+\DoxyCodeLine{52                     system(\textcolor{stringliteral}{"{}pause"{}});}
+\DoxyCodeLine{53                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{54             \textcolor{keywordflow}{case} 5: \mbox{\hyperlink{functions_8c_aa4ecb3ec8d1aca0d146ce7904218939d}{determinaTempoCurto}}(listaJob-\/>\mbox{\hyperlink{structjob_a4bf4637143979dd6f3e9accf1d189d50}{op}});}
+\DoxyCodeLine{55                     system(\textcolor{stringliteral}{"{}pause"{}});}
+\DoxyCodeLine{56                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{57             \textcolor{keywordflow}{case} 6: \mbox{\hyperlink{functions_8c_adb04b028690f19aaa9cf17d9cbb92dbb}{determinaTempoLongo}}(listaJob-\/>\mbox{\hyperlink{structjob_a4bf4637143979dd6f3e9accf1d189d50}{op}});}
+\DoxyCodeLine{58                     system(\textcolor{stringliteral}{"{}pause"{}});}
+\DoxyCodeLine{59                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{60             \textcolor{keywordflow}{case} 7: system(\textcolor{stringliteral}{"{}cls"{}});}
+\DoxyCodeLine{61                     \mbox{\hyperlink{functions_8c_a2c54d3f6d2009ac120971b93bbeb487b}{listarJobEmListaOrdenada}}(jb);}
+\DoxyCodeLine{62                     system(\textcolor{stringliteral}{"{}pause"{}});}
+\DoxyCodeLine{63                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{64             \textcolor{keywordflow}{case} 8: \mbox{\hyperlink{functions_8c_aaa24471450cbfb2928be5590944c37d8}{inserirJob}}(jb,\&idContJob);}
+\DoxyCodeLine{65                     system(\textcolor{stringliteral}{"{}pause"{}});}
+\DoxyCodeLine{66                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{67             \textcolor{keywordflow}{case} 9: \mbox{\hyperlink{functions_8c_a0236d64b392cf0118637909de2f6e687}{removeJob}}(jb);}
+\DoxyCodeLine{68                     system(\textcolor{stringliteral}{"{}pause"{}});}
+\DoxyCodeLine{69                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{70             \textcolor{keywordflow}{case} 10:procuraJob = \mbox{\hyperlink{functions_8c_a983d59477539e8a33752832ba7b638c4}{descobreJob}}(jb);}
+\DoxyCodeLine{71                     \mbox{\hyperlink{functions_8c_a7bcf635ec89d4b6915d4e06ba0202c75}{insereNoOperacao}}(procuraJob-\/>op,\&(procuraJob-\/>numOperacoes)); }
+\DoxyCodeLine{72                     system(\textcolor{stringliteral}{"{}pause"{}});}
+\DoxyCodeLine{73                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{74             \textcolor{keywordflow}{case} 11:procuraJob = \mbox{\hyperlink{functions_8c_a983d59477539e8a33752832ba7b638c4}{descobreJob}}(jb);}
+\DoxyCodeLine{75                     \mbox{\hyperlink{functions_8c_a2bf7f0ff2388ffd68d7f924de1452c4b}{removeOperacao}}(procuraJob-\/>op,\&(procuraJob-\/>numOperacoes));}
+\DoxyCodeLine{76                     system(\textcolor{stringliteral}{"{}pause"{}});}
+\DoxyCodeLine{77                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{78             \textcolor{keywordflow}{case} 12:procuraJob = \mbox{\hyperlink{functions_8c_a983d59477539e8a33752832ba7b638c4}{descobreJob}}(jb);}
+\DoxyCodeLine{79                     \mbox{\hyperlink{functions_8c_a6485fdb56c0cf76c3ae5f67e477ffb97}{editaOperacao}}(procuraJob-\/>op);}
+\DoxyCodeLine{80                     system(\textcolor{stringliteral}{"{}pause"{}});}
+\DoxyCodeLine{81                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{82             \textcolor{keywordflow}{case} 13:printf(\textcolor{stringliteral}{"{}Ate a proxima!\(\backslash\)n\(\backslash\)n"{}}); }
+\DoxyCodeLine{83                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{84         \}}
+\DoxyCodeLine{85     \}\textcolor{keywordflow}{while}(opcao != 0);}
+\DoxyCodeLine{86     }
+\DoxyCodeLine{87     \mbox{\hyperlink{functions_8c_ac78a7c0dfe5623fa4db1489462974e52}{guardaDadosFile}}(jb,\textcolor{stringliteral}{"{}dados.txt"{}});}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{90 \}}
+
+\end{DoxyCode}
