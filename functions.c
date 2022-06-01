@@ -256,7 +256,7 @@ void removeOperacao(operacao *op, int *numOperacoes) {
 		printf("Não existe operações na lista.\n"); 
 	}
 	else {
-		printf("Qual é o código cuja operação pretende remover?\n");
+		printf("Qual e o código cuja operacao pretende remover?\n");
 		scanf("%d",&ElemRetirar);
 
 		if(ElemRetirar == op->id) {
@@ -287,7 +287,7 @@ void removeOperacao(operacao *op, int *numOperacoes) {
 			}
 			else {
 				system("cls");
-				printf("O elemento com código %d não existe na lista.", ElemRetirar);
+				printf("O elemento com codigo %d nao existe na lista.", ElemRetirar);
 			}
 		}
 	}
@@ -304,10 +304,10 @@ void removeOperacaoNumJob(operacao *op, int *numOperacoes) {
 	j = op;
 	
 	if((j->seg)==NULL) { 
-		printf("Não existe operações na lista.\n"); 
+		printf("Nao existe operacoes na lista.\n"); 
 	}
 	else {
-		printf("Qual é o código cuja operação pretende remover?\n");
+		printf("Qual e o código cuja operacao pretende remover?\n");
 		scanf("%d",&ElemRetirar);
 
 		if(ElemRetirar == op->id) {
@@ -338,7 +338,7 @@ void removeOperacaoNumJob(operacao *op, int *numOperacoes) {
 			}
 			else {
 				system("cls");
-				printf("O elemento com código %d não existe na lista.", ElemRetirar);
+				printf("O elemento com codigo %d nao existe na lista.", ElemRetirar);
 			}
 		}
 	}
@@ -464,7 +464,7 @@ void criaOperacaoApartirFich(operacao *op, int idOp, int numMaquinas, int arrM[]
 void leOperacao(operacao *op) {
 	int i, j, verificar;
 
-	printf("Quantas máquinas podem ser utilizadas para esta operação: ");
+	printf("Quantas maquinas podem ser utilizadas para esta operacao: ");
 	scanf("%d",&op->quantMaquinas);
 
 	op->maquinaTempo = (int *)malloc(sizeof(int[2][op->quantMaquinas]));
@@ -474,7 +474,7 @@ void leOperacao(operacao *op) {
 				do {
 					if( j > 0) {
 						verificar = 0;
-						printf("Qual é o id da máquina que pretende utilizar: ");
+						printf("Qual e o id da maquina que pretende utilizar: ");
 						scanf("%d",&op->maquinaTempo[i*op->quantMaquinas + j]);
 
 						verificar = procuraMaquinaIgual(op,op->maquinaTempo[i*op->quantMaquinas + j],j);
@@ -484,13 +484,13 @@ void leOperacao(operacao *op) {
 					}
 					else {
 						verificar = 1;
-						printf("Qual é o id da máquina que pretende utilizar: ");
+						printf("Qual e o id da maquina que pretende utilizar: ");
 						scanf("%d",&op->maquinaTempo[i*op->quantMaquinas + j]);
 					}
 				}while(verificar == 0);
 			}
 			else {
-				printf("Quanto tempo demorará a maquina %d: ", op->maquinaTempo[0*op->quantMaquinas + j]);
+				printf("Quanto tempo demorara a maquina %d: ", op->maquinaTempo[0*op->quantMaquinas + j]);
 				scanf("%d",&op->maquinaTempo[i*op->quantMaquinas + j]);
 			}
 		}
@@ -508,7 +508,7 @@ void insereNoOperacao(operacao *op, int *numOperacoes) {
 	system("cls");
 
 	if(auxOp==NULL) { 
-		printf("Não há mais espaço de memória. É impossível inserir na operacao.\n\n");
+		printf("Nao ha mais espaço de memoria. E impossivel inserir na operacao.\n\n");
 		system("pause");
 	}
 	else {
@@ -558,7 +558,7 @@ job *novoNoJob(int key) {
 
 	if(no == NULL) {
 		system("cls");
-		printf("Nao foi possivel criar a arvore\n\n");
+		printf("Nao foi possivel criar a lista\n\n");
 		system("pause");
 		return NULL;
 	}
@@ -607,7 +607,7 @@ void removeJob(job *jb) {
 		printf("Nao tem operacoes na lista\n"); 
 	}
 	else {
-		printf("Qual é o codigo do Job que deseja remover\n");
+		printf("Qual e o codigo do Job que deseja remover\n");
 		scanf("%d",&ElemRetirar);
 
 		if(ElemRetirar == jb->id) {
@@ -641,7 +641,7 @@ void removeJob(job *jb) {
 }
 
 /**
-* @brief Insere um novo job na lista
+* @brief  Contagem das operaçoes no Job
 */
 void listarNoJob(operacao *auxOp, job *jb) {
 	int i = 0;
@@ -695,19 +695,19 @@ job *descobreJob(job *auxjb) {
 	system("cls");
 	
 	if(auxjb == NULL) { 
-		printf("Não há jobs na lista\n");
+		printf("Nao ha jobs na lista\n");
 		system("cls");
 		return NULL;
 	}
 	else {
-		printf("Qual é o id que pretende encontrar?\n");
+		printf("Qual e o id que pretende encontrar?\n");
 		scanf("%d",&ElemDescobrir);
 
 		jobADescobrir = descobreJobLista(auxjb,ElemDescobrir);
 		if(jobADescobrir != NULL)
 			return jobADescobrir;
 		
-		printf("O Job com o codigo %d não existe!\n", ElemDescobrir);
+		printf("O Job com o codigo %d nao existe!\n", ElemDescobrir);
 		return NULL;
 	}
 }
@@ -805,10 +805,10 @@ int simNao() {
 			exit(0);
 		}
 		if(errno == ERANGE) {
-			printf("A opção introduzida ou é demasiado grande ou demasiado pequena.""\n\n");
+			printf("A opcao introduzida ou e demasiado grande ou demasiado pequena.""\n\n");
 		}
 		else if((strcmp(buf,"sim") != 0) && (strcmp(buf,"nao") != 0)) {
-			printf("Por favor, introduza um Sim ou Não.\n\n");
+			printf("Por favor, introduza um Sim ou Nao.\n\n");
 		}
 		else if(strcmp(buf,"sim") == 0) {
 			return 1;
